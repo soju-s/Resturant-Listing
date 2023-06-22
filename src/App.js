@@ -1,12 +1,23 @@
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Footer from "./Components/Footer/Footer";
+import Headers from "./Components/Headers/Headers";
+import Main from "./Components/Main/Main";
+import ViewResturant from "./Components/ViewResturant";
 
 function App() {
   return (
-  <>
-     <h1 className='text-center'><i class="fa-solid fa-house"></i></h1>
-    
-  </>
-  )
+    <>
+      <Headers />
+      <section>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/view-resturant/:id" element={<ViewResturant />} />
+        </Routes>
+      </section>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
